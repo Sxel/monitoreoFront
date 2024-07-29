@@ -1,0 +1,29 @@
+<div class="plant-list">
+    <h2>Plantas</h2>
+    <button (click)="openCreatePlantDialog()">+ Crear nueva planta</button>
+    <table>
+      <thead>
+        <tr>
+          <th>País</th>
+          <th>Nombre de la planta</th>
+          <th>Lecturas</th>
+          <th>Alertas medias</th>
+          <th>Alertas rojas</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let plant of plants">
+          <td><img [src]="plant.flag" alt="Flag"> {{ plant.country }}</td>
+          <td>{{ plant.name }}</td>
+          <td>{{ plant.readings }}</td>
+          <td>{{ plant.mediumAlerts }}</td>
+          <td>{{ plant.redAlerts }}</td>
+          <td>
+            <button (click)="openEditPlantDialog(plant)">Editar</button>
+            <button (click)="deletePlant(plant.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

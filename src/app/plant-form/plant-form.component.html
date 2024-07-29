@@ -1,0 +1,20 @@
+<h2>{{ isEdit ? 'Editar' : 'Crear' }} planta</h2>
+<form (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <input matInput placeholder="Nombre planta" [(ngModel)]="plant.name" name="name" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="País" [(ngModel)]="plant.country" name="country" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="number" placeholder="Cantidad de lecturas" [(ngModel)]="plant.readings" name="readings" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="number" placeholder="Alertas medias" [(ngModel)]="plant.mediumAlerts" name="mediumAlerts" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="number" placeholder="Alertas rojas" [(ngModel)]="plant.redAlerts" name="redAlerts" required>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit">{{ isEdit ? 'Actualizar' : 'Crear' }}</button>
+  <button mat-button (click)="dialogRef.close()">Cancelar</button>
+</form>
