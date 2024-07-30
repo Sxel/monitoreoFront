@@ -1,6 +1,9 @@
-<div class="plant-list">
+<div class="plant-list-container">
+  <div class="table-container">
+  <div class="header">
   <h2>Plantas</h2>
-  <button mat-raised-button color="primary" (click)="openCreatePlantDialog()">+ Crear nueva planta</button>
+  <button class="create-button" (click)="openCreatePlantDialog()">+ Crear nueva planta</button>
+  </div>
   <table mat-table [dataSource]="plants" class="mat-elevation-z8">
     <ng-container matColumnDef="country">
       <th mat-header-cell *matHeaderCellDef>País</th>
@@ -34,4 +37,5 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+</div>
 </div>
