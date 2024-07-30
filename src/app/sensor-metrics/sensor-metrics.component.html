@@ -1,0 +1,23 @@
+<div class="sensor-cards-container">
+  <mat-card *ngFor="let sensor of sensorMetrics" class="sensor-card">
+    <mat-card-content>
+      <div class="sensor-info">
+        <div class="sensor-title">{{ sensor.title }}</div>
+        <div class="sensor-values">
+          <span class="sensor-value ok">
+            <mat-icon class="status-icon">check_circle</mat-icon>{{ sensor.okValue }}
+          </span>
+          <span class="sensor-value danger">
+            <mat-icon class="status-icon">error</mat-icon>{{ sensor.dangerValue }}
+          </span>
+          <span class="sensor-value warning">
+            <mat-icon class="status-icon">warning</mat-icon>{{ sensor.warningValue }}
+          </span>
+        </div>
+      </div>
+      <div class="sensor-icon-container">
+        <mat-icon class="sensor-icon">{{ sensor.icon }}</mat-icon>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

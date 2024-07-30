@@ -1,0 +1,87 @@
+.sensor-cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+  background-color: #f8fafc;
+}
+
+.sensor-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+}
+
+mat-card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sensor-info {
+  flex-grow: 1;
+}
+
+.sensor-title {
+  font-weight: 400;
+  color: #4a5568;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.sensor-values {
+  display: flex;
+  gap: 10px; /* Adjusted for better spacing */
+}
+
+.sensor-value {
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.sensor-value mat-icon.status-icon {
+  font-size: 16px;
+  margin-right: 6px;
+}
+
+.sensor-value.ok {
+  color: #48bb78;
+}
+
+.sensor-value.warning {
+  color: #ed8936;
+}
+
+.sensor-value.danger {
+  color: #e53e3e;
+}
+
+.sensor-icon-container {
+  background-color: #edf2f7;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sensor-icon {
+  font-size: 24px; /* Increased font size for better visibility */
+  color: #4299e1;
+}
+
+@media (max-width: 1200px) {
+  .sensor-cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .sensor-cards-container {
+    grid-template-columns: 1fr;
+  }
+}

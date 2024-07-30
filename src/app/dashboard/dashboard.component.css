@@ -1,0 +1,31 @@
+    .dashboard {
+      padding: 20px;
+    }
+    .metrics {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .metric {
+      flex: 1;
+      margin: 0 10px;
+      text-align: center;
+      position: relative;
+    }
+    .metric-title {
+      font-size: 14px;
+      color: #666;
+    }
+    .metric-value {
+      font-size: 24px;
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+    .metric mat-icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 20px;
+    }
+  

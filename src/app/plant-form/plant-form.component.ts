@@ -10,39 +10,9 @@ import { ApiService } from '../api.service';
 @Component({
   selector: 'app-plant-form',
   standalone: true,
+  templateUrl: './plant-form.component.html',
+  styleUrls:['./plant-form.component.css'], 
   imports: [CommonModule, FormsModule, MatDialogModule, MatFormFieldModule, MatInputModule, MatButtonModule],
-  template: `
-    <h2 mat-dialog-title>{{ isEdit ? 'Editar' : 'Crear' }} planta</h2>
-    <mat-dialog-content>
-      <form (ngSubmit)="onSubmit()">
-        <mat-form-field>
-          <input matInput placeholder="Nombre planta" [(ngModel)]="plant.name" name="name" required>
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput placeholder="País" [(ngModel)]="plant.country" name="country" required>
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput type="number" placeholder="Cantidad de lecturas" [(ngModel)]="plant.readings" name="readings" required>
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput type="number" placeholder="Alertas medias" [(ngModel)]="plant.mediumAlerts" name="mediumAlerts" required>
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput type="number" placeholder="Alertas rojas" [(ngModel)]="plant.redAlerts" name="redAlerts" required>
-        </mat-form-field>
-      </form>
-    </mat-dialog-content>
-    <mat-dialog-actions>
-      <button mat-button (click)="dialogRef.close()">Cancelar</button>
-      <button mat-raised-button color="primary" (click)="onSubmit()">{{ isEdit ? 'Actualizar' : 'Crear' }}</button>
-    </mat-dialog-actions>
-  `,
-  styles: [`
-    mat-form-field {
-      width: 100%;
-      margin-bottom: 15px;
-    }
-  `]
 })
 export class PlantFormComponent {
   plant: any = {};

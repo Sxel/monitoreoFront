@@ -9,59 +9,9 @@ import { PlantFormComponent } from '../plant-form/plant-form.component';
 @Component({
   selector: 'app-plant-list',
   standalone: true,
-  imports: [CommonModule, MatTableModule, MatButtonModule, MatDialogModule],
-  template: `
-    <div class="plant-list">
-      <h2>Plantas</h2>
-      <button mat-raised-button color="primary" (click)="openCreatePlantDialog()">+ Crear nueva planta</button>
-      <table mat-table [dataSource]="plants" class="mat-elevation-z8">
-        <ng-container matColumnDef="country">
-          <th mat-header-cell *matHeaderCellDef>País</th>
-          <td mat-cell *matCellDef="let plant">
-            <img [src]="plant.flag" alt="Flag" class="country-flag"> {{ plant.country }}
-          </td>
-        </ng-container>
-        <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef>Nombre de la planta</th>
-          <td mat-cell *matCellDef="let plant">{{ plant.name }}</td>
-        </ng-container>
-        <ng-container matColumnDef="readings">
-          <th mat-header-cell *matHeaderCellDef>Lecturas</th>
-          <td mat-cell *matCellDef="let plant">{{ plant.readings }}</td>
-        </ng-container>
-        <ng-container matColumnDef="mediumAlerts">
-          <th mat-header-cell *matHeaderCellDef>Alertas medias</th>
-          <td mat-cell *matCellDef="let plant">{{ plant.mediumAlerts }}</td>
-        </ng-container>
-        <ng-container matColumnDef="redAlerts">
-          <th mat-header-cell *matHeaderCellDef>Alertas rojas</th>
-          <td mat-cell *matCellDef="let plant">{{ plant.redAlerts }}</td>
-        </ng-container>
-        <ng-container matColumnDef="actions">
-          <th mat-header-cell *matHeaderCellDef>Acciones</th>
-          <td mat-cell *matCellDef="let plant">
-            <button mat-button color="primary" (click)="openEditPlantDialog(plant)">Editar</button>
-            <button mat-button color="warn" (click)="deletePlant(plant.id)">Eliminar</button>
-          </td>
-        </ng-container>
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      </table>
-    </div>
-  `,
-  styles: [`
-    .plant-list {
-      padding: 20px;
-    }
-    table {
-      width: 100%;
-      margin-top: 20px;
-    }
-    .country-flag {
-      width: 20px;
-      margin-right: 5px;
-    }
-  `]
+  templateUrl: './plant-list.component.html',
+  styleUrls: ['./plant-list.component.css'],
+  imports: [CommonModule, MatTableModule, MatButtonModule, MatDialogModule]
 })
 export class PlantListComponent implements OnInit {
   plants: any[] = [];

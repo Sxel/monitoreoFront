@@ -1,23 +1,14 @@
 <div class="dashboard">
-    <h1>Monitoreo global</h1>
-    <div class="metrics">
-      <div class="metric">
-        <span>Lecturas OK</span>
-        <span>{{ monitoringData.totalReadings }}</span>
-      </div>
-      <div class="metric">
-        <span>Alertas medias</span>
-        <span>{{ monitoringData.totalMediumAlerts }}</span>
-      </div>
-      <div class="metric">
-        <span>Alertas rojas</span>
-        <span>{{ monitoringData.totalRedAlerts }}</span>
-      </div>
-      <div class="metric">
-        <span>Sensores deshabilitados</span>
-        <span>{{ monitoringData.disabledSensorsCount }}</span>
-      </div>
-
-    </div>
-    <app-plant-list></app-plant-list>  <!-- Añade esta línea -->
+  <h1>Monitoreo global</h1>
+  <div class="metrics">
+    <mat-card class="metric" *ngFor="let metric of metrics">
+      <mat-card-content>
+        <span class="metric-title">{{ metric.title }}</span>
+        <span class="metric-value">{{ metric.value }}</span>
+        <mat-icon [ngClass]="metric.iconClass">{{ metric.icon }}</mat-icon>
+      </mat-card-content>
+    </mat-card>
   </div>
+  <app-plant-list></app-plant-list>
+  <app-sensor-metrics></app-sensor-metrics>
+</div>

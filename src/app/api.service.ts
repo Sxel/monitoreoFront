@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { forkJoin, map, Observable } from 'rxjs';
+import { forkJoin, map, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -39,5 +39,19 @@ export class ApiService {
 
   deletePlant(id: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/plants/${id}`);
+  }
+
+  getSensorMetrics(): Observable<any[]> {
+   
+    return of([
+      { title: 'Temperatura', icon: 'thermostat', okValue: 100, warningValue: 20, dangerValue: 3 },
+      { title: 'Presión', icon: 'compress', okValue: 100, warningValue: 20, dangerValue: 3 },
+      { title: 'Viento', icon: 'air', okValue: 100, warningValue: 20, dangerValue: 3 },
+      { title: 'Niveles', icon: 'waves', okValue: 100, warningValue: 20, dangerValue: 3 },
+      { title: 'Energía', icon: 'bolt', okValue: 100, warningValue: 20, dangerValue: 3 },
+      { title: 'Tensión', icon: 'electric_meter', okValue: 100, warningValue: 20, dangerValue: 3 },
+      { title: 'Monóxido de carbono', icon: 'co2', okValue: 100, warningValue: 20, dangerValue: 3 },
+      { title: 'Otros gases', icon: 'gas_meter', okValue: 100, warningValue: 20, dangerValue: 3 }
+    ]);
   }
 }
