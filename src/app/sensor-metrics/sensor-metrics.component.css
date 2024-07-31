@@ -32,7 +32,7 @@ mat-card-content {
 
 .sensor-values {
   display: flex;
-  gap: 10px; /* Adjusted for better spacing */
+  gap: 10px; 
 }
 
 .sensor-value {
@@ -70,7 +70,7 @@ mat-card-content {
 }
 
 .sensor-icon {
-  font-size: 24px; /* Increased font size for better visibility */
+  font-size: 24px; 
   color: #4299e1;
 }
 
